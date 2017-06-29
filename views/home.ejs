@@ -191,8 +191,9 @@
 
 
     <script>
-        var url = 'http://a.teads.tv/vast/get/1550';
+        var url = location.search.split('?vast=');
         url = 'http://a.teads.tv/vast/get/1550';
+        url = url.split("&format=");
 
         var formatName = 'inread'
         var formatType = 'VastUrl'
@@ -201,6 +202,7 @@
           formatName = url[1]
         }
 
+        url = url[0]
         var pageId = 0;
         var placementId = 1;
         var slotSelector = 'article > p'
