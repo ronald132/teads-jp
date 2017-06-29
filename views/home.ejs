@@ -188,5 +188,77 @@
           <p>&mdash;</p>
         </article>
     </div>
+
+
+    <script>
+        var url = 'http://a.teads.tv/vast/get/1550';
+        url = 'http://a.teads.tv/vast/get/1550';
+
+        var formatName = 'inread'
+        var formatType = 'VastUrl'
+
+        if (url.length > 1) {
+          formatName = url[1]
+        }
+
+        var pageId = 0;
+        var placementId = 1;
+        var slotSelector = 'article > p'
+
+        if (formatName == 'engage') {
+          formatType = 'DisplayUrl'
+          formatName = 'inread'
+        }
+
+        window._tts = {}
+        if (formatName == 'slider') {
+          window._tts[placementId] = {
+              slider: {
+                allow_corner_position: true,
+                allow_top_position : false
+              }
+          }
+          slotSelector = 'no slot'
+          formatName = 'inread'
+        }
+
+        window._ttp = {};
+        window._ttp[pageId] = [
+          {
+            pid: placementId,
+            format: formatName,
+            slot: {
+              selector: slotSelector
+            },
+            css: "",
+          }
+        ];
+
+        window._tta = {};
+        window._tta[pageId] = [
+          {
+            type: formatType,
+            content: url,
+            settings: {
+              values: {
+                pageId: pageId,
+                placementId: placementId,
+                placementFormat: formatName,
+                threshold: 50
+              },
+              components: {},
+              behaviors: {
+                onlyNative: false,
+                detachedSlot: {
+                  top: false,
+                  corner: true
+                }
+              }
+            }
+          }
+        ];
+
+    </script>
+    <script src="//cdn.teads.tv/media/format.js"></script>
 </body>
 </html>
