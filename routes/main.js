@@ -10,5 +10,8 @@ router.get('/ctr_test', function(req, res){
 router.get('/dbm_ctr', function(req, res){
   res.render('dbm_ctr');
 });
+router.get('/test', function(req, res){
+  res.render('test');
+});
 
 module.exports = router;
