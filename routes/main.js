@@ -4,8 +4,12 @@ router.get('/', function(req, res){
   res.render('home');
 });
 
-router.get('/ctr_test', function(req, res){
-  res.render('ctr');
+router.get('/ctr_sp', function(req, res){
+  res.render('ctr_sp');
+});
+
+router.get('/ctr_pc', function(req, res){
+  res.render('ctr_pc');
 });
 router.get('/dbm_ctr', function(req, res){
   res.render('dbm_ctr');
