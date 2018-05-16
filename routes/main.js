@@ -20,5 +20,8 @@ router.get('/test', function(req, res){
 router.get('/demo', function(req, res){
   res.render('demo');
 });
+router.get('/ss_demo', function(req, res){
+  res.render('ss_demo');
+});
 
 module.exports = router;
